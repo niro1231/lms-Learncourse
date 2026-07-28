@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
 import ProtectedRoute from "./components/common/auth/ProtectedRoute";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
-import NotFound from "./pages/NotFound/NotFound";
+import Home from "./pages/home/home";
+import Login from "./pages/login/login";
+import Register from "./pages/register/register";
+import NotFound from "./pages/notfound/notfound";
 import CourseDetails from "./pages/course/CourseDetails";
 import Profile from "./pages/profile/Profile";
 import AdminDashboard from "./pages/admin/AdminDashboard";
