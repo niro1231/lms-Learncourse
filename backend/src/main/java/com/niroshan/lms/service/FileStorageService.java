@@ -3,7 +3,6 @@ package com.niroshan.lms.service;
 import com.niroshan.lms.exception.FileUploadException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.UUID;
@@ -31,7 +30,6 @@ public class FileStorageService {
     // =========================
     // SAVE COURSE IMAGE
     // =========================
-
     public String saveImage(MultipartFile file)
             throws IOException {
         validateFile(file);
@@ -50,7 +48,6 @@ public class FileStorageService {
     // =========================
     // COMMON VALIDATION
     // =========================
-
     private void validateFile(
             MultipartFile file
     ){
@@ -71,7 +68,6 @@ public class FileStorageService {
     // =========================
     // ACTUAL SAVE METHOD
     // =========================
-
     private String save(
             MultipartFile file
     )

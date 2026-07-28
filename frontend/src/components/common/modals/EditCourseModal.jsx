@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCourseById, updateCourse } from "../../service/courseService";
+import { getCourseById, updateCourse } from "../../../service/courseService";
 
 function EditCourseModal({ courseId, onClose, onUpdated }) {
     const [form, setForm] = useState({

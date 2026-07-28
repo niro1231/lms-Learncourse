@@ -10,13 +10,11 @@ import com.niroshan.lms.repository.CourseRepository;
 import com.niroshan.lms.repository.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.List;
 import com.niroshan.lms.dto.response.CourseDetailsResponse;
 import com.niroshan.lms.dto.response.LessonResponse;
 import com.niroshan.lms.repository.RatingRepository;
-import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class CourseService {
@@ -292,11 +290,10 @@ public class CourseService {
                 })
                 .toList();
     }
-    public List<CourseResponse> getCoursesByInstructor(Long instructorId){
 
+    public List<CourseResponse> getCoursesByInstructor(Long instructorId){
         List<Course> courses =
                 courseRepository.findByInstructorId(instructorId);
-
         return courses.stream()
                 .map(this::convertToResponse)
                 .toList();

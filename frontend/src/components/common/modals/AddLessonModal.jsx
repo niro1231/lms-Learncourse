@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addLesson } from "../../service/lessonService";
+import { addLesson } from "../../../service/lessonService";
 import "./AddLessonModal.css";
 
 

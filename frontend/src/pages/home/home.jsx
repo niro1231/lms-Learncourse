@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import CourseCard from "../../components/course/CourseCard";
 import { getTrendingCourses, getAllCourses } from "../../service/courseService";
 import InstructorSection from "../../components/instructor/InstructorSection";
-import AdvertisementSection from "../../components/advertisement/AdvertisementSection";
-import "../../styles/home.css";
+import AdvertisementSection from "../Advertisement/AdvertisementSection";
+import "./home.css";
 
 function Home() {
 

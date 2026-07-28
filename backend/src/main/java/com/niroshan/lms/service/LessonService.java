@@ -16,12 +16,10 @@ import java.io.IOException;
 
 @Service
 public class LessonService {
-
     private final CourseRepository courseRepository;
     private final CourseLessonRepository lessonRepository;
     private final UserRepository userRepository;
     private final FileStorageService fileStorageService;
-
     public LessonService(
             CourseRepository courseRepository,
             CourseLessonRepository lessonRepository,
@@ -40,7 +38,6 @@ public class LessonService {
             String title,
             MultipartFile file
     ) throws IOException {
-
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() ->
                         new RuntimeException("Course not found"));
@@ -49,26 +46,20 @@ public class LessonService {
                 .getContext()
                 .getAuthentication()
                 .getName();
-
         User instructor = userRepository.findByEmail(email)
                 .orElseThrow(() ->
                         new RuntimeException("User not found"));
-
         if (!course.getInstructor().getId().equals(instructor.getId())) {
             throw new RuntimeException(
                     "You can only add lessons to your own courses."
             );
         }
-
         String pdfUrl = fileStorageService.savePdf(file);
-
         CourseLesson lesson = new CourseLesson();
         lesson.setTitle(title);
         lesson.setPdfUrl(pdfUrl);
         lesson.setCourse(course);
-
         CourseLesson saved = lessonRepository.save(lesson);
-
         return new LessonResponse(
                 saved.getId(),
                 saved.getTitle(),
@@ -94,33 +85,26 @@ public class LessonService {
             String title,
             MultipartFile file
     ) throws IOException {
-
         Course course =
                 courseRepository.findById(courseId)
                         .orElseThrow(
                                 () -> new RuntimeException("Course not found")
                         );
-
         checkOwnership(course);
-
         CourseLesson lesson =
                 lessonRepository.findById(lessonId)
                         .orElseThrow(
                                 () -> new RuntimeException("Lesson not found")
                         );
-
         lesson.setTitle(title);
-
         if (file != null && !file.isEmpty()) {
             String pdfUrl =
                     fileStorageService.savePdf(file);
 
             lesson.setPdfUrl(pdfUrl);
         }
-
         CourseLesson updated =
                 lessonRepository.save(lesson);
-
         return new LessonResponse(
                 updated.getId(),
                 updated.getTitle(),
@@ -143,7 +127,6 @@ public class LessonService {
                         .orElseThrow(
                                 () -> new RuntimeException("Lesson not found")
                         );
-
         lessonRepository.delete(lesson);
 
     }

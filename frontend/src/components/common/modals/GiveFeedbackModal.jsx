@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addRating } from "../../service/courseService";
+import { addRating } from "../../../service/courseService";
 import "./GiveFeedbackModal.css";
 
 function GiveFeedbackModal({ courseId, onClose }) {

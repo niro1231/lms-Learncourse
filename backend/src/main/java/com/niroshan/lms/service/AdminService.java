@@ -7,7 +7,6 @@ import com.niroshan.lms.repository.CourseRepository;
 import com.niroshan.lms.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import com.niroshan.lms.entity.Course;
-import com.niroshan.lms.repository.CourseRepository;
 import java.util.List;
 
 @Service

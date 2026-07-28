@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCourseById } from "../../service/courseService";
 import { getLessonsByCourse, deleteLesson as deleteLessonApi } from "../../service/lessonService";
-import EditLessonModal from "../../components/common/EditLessonModal";
-import DeleteLessonModal from "../../components/common/DeleteLessonModal";
-import AddLessonModal from "../../components/course/AddLessonModal";
-import GiveFeedbackModal from "../../components/course/GiveFeedbackModal";
+import EditLessonModal from "../../components/common/modals/EditLessonModal";
+import DeleteLessonModal from "../../components/common/modals/DeleteLessonModal";
+import AddLessonModal from "../../components/common/modals/AddLessonModal";
+import GiveFeedbackModal from "../../components/common/modals/GiveFeedbackModal";
 
 import "./CourseDetails.css";
 

@@ -38,6 +38,7 @@ public class UserService {
         this.authenticationManager = authenticationManager;
         this.fileStorageService = fileStorageService;
     }
+
     // REGISTER
     public UserResponse registerUser(
             RegisterRequest request

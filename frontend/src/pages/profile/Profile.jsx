@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { getInstructorDashboard } from "../../service/instructorService";
 import { getMyCourses, deleteCourse } from "../../service/courseService";
 import CourseCard from "../../components/course/CourseCard";
-import EditCourseModal from "../../components/course/EditCourseModal";
-import DeleteConfirmModal from "../../components/course/DeleteConfirmModal";
-import AddCourseModal from "../../components/course/AddCourseModal";
+import EditCourseModal from "../../components/common/modals/EditCourseModal";
+import DeleteConfirmModal from "../../components/common/modals/DeleteConfirmModal";
+import AddCourseModal from "../../components/common/modals/AddCourseModal";
 import "./Profile.css";
 
 function Profile() {

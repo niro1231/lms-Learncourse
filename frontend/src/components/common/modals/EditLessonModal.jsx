@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react";
-import { getLessonsByCourse,updateLesson } from "../../service/lessonService";
+import { getLessonsByCourse,updateLesson } from "../../../service/lessonService";
 
 function EditLessonModal({courseId,lessonId,onClose,onUpdated}){
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createCourse } from "../../service/courseService";
+import { createCourse } from "../../../service/courseService";
 import "./AddCourseModal.css";
 
 function AddCourseModal({ onClose, onAdded }) {

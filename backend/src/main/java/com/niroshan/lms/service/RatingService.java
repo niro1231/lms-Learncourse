@@ -60,6 +60,7 @@ public class RatingService {
                 saved.getComment()
         );
     }
+
     public List<RatingResponse> getRatings(
             Long courseId
     ){
