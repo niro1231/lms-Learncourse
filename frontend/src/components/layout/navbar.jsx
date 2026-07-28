@@ -56,8 +56,8 @@ function Navbar() {
                   <div
                     className="rounded-circle bg-white text-dark d-flex justify-content-center align-items-center"
                     style={{
-                      width:"38px",
-                      height:"38px"
+                      width: "38px",
+                      height: "38px"
                     }}
                   >
                     <i className="bi bi-person-fill fs-5"></i>

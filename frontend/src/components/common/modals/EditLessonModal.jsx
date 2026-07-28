@@ -150,11 +150,8 @@ function EditLessonModal({courseId,lessonId,onClose,onUpdated}){
                             >
                                 Update
                             </button>
-
                         </div>
-
                     </form>
-
                 </div>
             </div>
         </div>

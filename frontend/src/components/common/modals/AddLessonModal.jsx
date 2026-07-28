@@ -2,19 +2,14 @@ import { useState } from "react";
 import { addLesson } from "../../../service/lessonService";
 import "./AddLessonModal.css";
 
-
 function AddLessonModal({courseId, onClose, onAdded}) {
-
 
     const [title,setTitle] = useState("");
     const [file,setFile] = useState(null);
 
-
-
     const handleSubmit = async(e)=>{
 
         e.preventDefault();
-
 
         try{
 
@@ -23,13 +18,10 @@ function AddLessonModal({courseId, onClose, onAdded}) {
             formData.append("title", title);
             formData.append("file", file);
 
-
             await addLesson(courseId, formData);
-
 
             onAdded();
             onClose();
-
 
         }catch(error){
 
@@ -40,15 +32,11 @@ function AddLessonModal({courseId, onClose, onAdded}) {
 
     };
 
-
-
     return (
 
         <div className="modal-backdrop">
 
-
             <div className="add-lesson-modal">
-
 
                 <div className="modal-header">
 
@@ -63,10 +51,7 @@ function AddLessonModal({courseId, onClose, onAdded}) {
 
                 </div>
 
-
-
                 <form onSubmit={handleSubmit}>
-
 
                     <input
                         type="text"
@@ -76,8 +61,6 @@ function AddLessonModal({courseId, onClose, onAdded}) {
                         required
                     />
 
-
-
                     <input
                         type="file"
                         accept=".pdf"
@@ -85,10 +68,7 @@ function AddLessonModal({courseId, onClose, onAdded}) {
                         required
                     />
 
-
-
                     <div className="modal-footer">
-
 
                         <button
                             type="button"
@@ -97,8 +77,6 @@ function AddLessonModal({courseId, onClose, onAdded}) {
                             Cancel
                         </button>
 
-
-
                         <button
                             type="submit"
                             className="save-btn"
@@ -106,20 +84,15 @@ function AddLessonModal({courseId, onClose, onAdded}) {
                             Add Lesson
                         </button>
 
-
                     </div>
-
 
                 </form>
 
-
             </div>
-
 
         </div>
 
     );
 }
-
 
 export default AddLessonModal;

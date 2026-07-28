@@ -11,7 +11,6 @@ function AddCourseModal({ onClose, onAdded }) {
         thumbnail: null
     });
 
-
     const handleChange = (e) => {
 
         if (e.target.name === "thumbnail") {
@@ -31,7 +30,6 @@ function AddCourseModal({ onClose, onAdded }) {
         }
     };
 
-
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -45,13 +43,10 @@ function AddCourseModal({ onClose, onAdded }) {
             data.append("category", formData.category);
             data.append("thumbnail", formData.thumbnail);
 
-
             await createCourse(data);
-
 
             onAdded();   // reload courses
             onClose();   // close modal
-
 
         } catch (error) {
 
@@ -62,13 +57,11 @@ function AddCourseModal({ onClose, onAdded }) {
 
     };
 
-
     return (
 
         <div className="modal-backdrop">
 
             <div className="add-course-modal">
-
 
                 <div className="modal-header">
 
@@ -83,10 +76,7 @@ function AddCourseModal({ onClose, onAdded }) {
 
                 </div>
 
-
-
                 <form onSubmit={handleSubmit}>
-
 
                     <input
                         type="text"
@@ -97,8 +87,6 @@ function AddCourseModal({ onClose, onAdded }) {
                         required
                     />
 
-
-
                     <textarea
                         name="description"
                         placeholder="Course description"
@@ -106,8 +94,6 @@ function AddCourseModal({ onClose, onAdded }) {
                         onChange={handleChange}
                         required
                     />
-
-
 
                     <input
                         type="text"
@@ -118,8 +104,6 @@ function AddCourseModal({ onClose, onAdded }) {
                         required
                     />
 
-
-
                     <input
                         type="file"
                         name="thumbnail"
@@ -128,10 +112,7 @@ function AddCourseModal({ onClose, onAdded }) {
                         required
                     />
 
-
-
                     <div className="modal-footer">
-
 
                         <button
                             type="button"
@@ -140,8 +121,6 @@ function AddCourseModal({ onClose, onAdded }) {
                             Cancel
                         </button>
 
-
-
                         <button
                             type="submit"
                             className="save-btn"
@@ -149,12 +128,9 @@ function AddCourseModal({ onClose, onAdded }) {
                             Create
                         </button>
 
-
                     </div>
 
-
                 </form>
-
 
             </div>
 
