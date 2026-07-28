@@ -1,0 +1,35 @@
+.advertisement-card{
+    position:relative;
+    border:1px solid #ddd;
+    border-radius:18px;
+    overflow:hidden;
+    height:250px;
+}
+
+.advertisement-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.advertisement-content{
+    position:absolute;
+    bottom:25px;
+    left:40px;
+}
+
+.advertisement-btn{
+    background:#084298;
+    color:white;
+    border:none;
+    padding:6px 16px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.advertisement-btn:hover{
+    background:#06357a;
+}

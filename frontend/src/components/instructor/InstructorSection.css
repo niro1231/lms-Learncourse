@@ -1,0 +1,96 @@
+.instructor-banner {
+    background: #1f2230;
+    border-radius: 28px;
+    padding: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+}
+
+/* Left Side */
+
+.banner-left {
+    width: 38%;
+}
+
+.banner-left h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.banner-left p {
+    color: #c7cad8;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.banner-left button {
+    margin-top: 30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* Right Side */
+
+.banner-right {
+    width: 62%;
+    display: flex;
+    gap: 20px;
+}
+
+
+/* Instructor Card */
+
+.teacher-card {
+    background: #414660;
+    border-radius: 18px;
+    width: 220px;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+}
+
+
+.teacher-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+
+.teacher-content{
+    padding:12px;
+}
+
+.teacher-content h4{
+    color:white;
+    margin-bottom:5px;
+    font-size:16px;
+}
+
+.teacher-content span{
+    display: inline-block;
+    width: fit-content;
+    font-size:12px;
+    font-weight:600;
+    padding:5px 8px;
+    border-radius:6px;
+}
+
+.teacher-content .badge{
+    margin-right:5px;
+}

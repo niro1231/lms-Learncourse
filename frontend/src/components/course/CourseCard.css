@@ -1,0 +1,10 @@
+.course-card {
+    background: #f1f1f1;
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.course-card .card-body {
+    background: #f1f1f1;
+}
