@@ -1,0 +1,12 @@
+# IntelliJ
+.idea/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend
+backend/target/
+
+# Environment files
+.env
