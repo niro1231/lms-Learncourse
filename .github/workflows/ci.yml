@@ -1,6 +1,8 @@
 name: LMS CI Pipeline
 
+
 on:
+
   push:
     branches:
       - main
@@ -10,7 +12,9 @@ on:
       - main
 
 
+
 jobs:
+
 
   backend:
 
@@ -19,56 +23,123 @@ jobs:
     runs-on: ubuntu-latest
 
 
+    services:
+
+      postgres:
+
+        image: postgres:17
+
+        env:
+
+          POSTGRES_DB: lms
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 1234
+
+
+        ports:
+
+          - 5432:5432
+
+
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+
+
     steps:
 
+
       - name: Checkout code
+
         uses: actions/checkout@v4
 
 
+
       - name: Setup Java
+
         uses: actions/setup-java@v4
+
         with:
+
           java-version: '21'
+
           distribution: 'temurin'
 
 
+
       - name: Build Spring Boot
+
         working-directory: backend
+
         run: |
+
           mvn clean package -DskipTests
 
 
+
       - name: Run Tests
+
         working-directory: backend
+
+        env:
+
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/lms
+
+          SPRING_DATASOURCE_USERNAME: postgres
+
+          SPRING_DATASOURCE_PASSWORD: 1234
+
+
         run: |
+
           mvn test
+
+
 
 
 
   frontend:
 
+
     name: Frontend Build
+
 
     runs-on: ubuntu-latest
 
 
+
     steps:
 
+
       - name: Checkout code
+
         uses: actions/checkout@v4
 
 
+
       - name: Setup Node
+
         uses: actions/setup-node@v4
+
         with:
+
           node-version: 22
 
 
+
       - name: Install dependencies
+
         working-directory: frontend
+
         run: npm install
 
 
+
       - name: Build React
+
         working-directory: frontend
+
         run: npm run build
